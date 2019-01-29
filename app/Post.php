@@ -10,10 +10,10 @@ class Post extends Model
         'user_id', 'category_id', 'name', 'slug', 'excerpt', 'body', 'status', 'file'
     ];
     public function user(){
-        return $this->belongTo(User::tag);
+        return $this->belongsTo(User::class);
     }
     public function category(){
-        return $this->belongTo(category::tag);
+        return $this->belongsTo(Category::class);
     }
     public function tags(){
         return $this->belongsToMany(Tag::class);
