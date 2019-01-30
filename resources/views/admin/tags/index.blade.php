@@ -25,10 +25,10 @@
                                 <td>{{ $tag->id }}</td>
                                 <td>{{ $tag->name }}</td>
                                 <td width="10px">
-                                    <a href="route('tags.show')" class="btn btn-sm btn-default">ver</a>
+                                    <a href="{{ route('tags.show', $tag->id) }}" class="btn btn-sm btn-default">ver</a>
                                 </td>
                                 <td width="10px">
-                                    <a href="route('tags.edit')" class="btn btn-sm btn-default">editar</a>
+                                    <a href="{{ route('tags.edit', $tag->id) }}" class="btn btn-sm btn-default">editar</a>
                                 </td>
                                 <td width="10px">
                                     {!! Form::open(['route' => ['tags.destroy', $tag->id], 'method' => 'DELETE']) !!}
