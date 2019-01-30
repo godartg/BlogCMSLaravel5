@@ -10,7 +10,6 @@
                         Crear
                     </a>
                 </div>
-            
                 <div class="panel-body">
                     <table class="table table-striped table-hover">
                         <thead>
@@ -32,7 +31,11 @@
                                     <a href="route('tags.edit')" class="btn btn-sm btn-default">editar</a>
                                 </td>
                                 <td width="10px">
-                                    eliminar
+                                    {!! Form::open(['route' => ['tags.destroy', $tag->id], 'method' => 'DELETE']) !!}
+                                        <button class="btn btn-sm btn-danger">
+                                            Eliminar
+                                        </button>
+                                    {!! Form::close() !!}
                                 </td>
                             </tr>
                             @endforeach
