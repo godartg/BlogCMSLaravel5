@@ -49,9 +49,9 @@
                                 </li>
                             @endif
                         @else
-                            <li><a href="{{route('tags.index')}}">Etiquetas</a></li>
-                            <li><a href="{{route('categories.index')}}">Categorias</a></li>
-                            <li><a href="{{route('posts.index')}}"></a>Entradas</li>
+                            <li class="nav-item"><a href="{{route('tags.index')}}">Etiquetas</a></li>
+                            <li class="nav-item"><a href="{{route('categories.index')}}">Categorias</a></li>
+                            <li class="nav-item"><a href="{{route('posts.index')}}">Entradas</a></li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
