@@ -103,5 +103,7 @@
             @yield('content')
         </main>
     </div>
+    <script scr="{{ asset('js/app.js') }}"></script>
+    @yield('scripts')
 </body>
 </html>
