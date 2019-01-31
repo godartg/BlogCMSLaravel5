@@ -48,13 +48,19 @@
 </div>
 @section('scripts')
 <script scr="{{ asset('vendor/stringToSlug/jquery.stringToSlug.min.js') }}"></script>
-<script>
-    $(document).ready(function(){
-        $("#name, #slug").stringToSlut({
-            callback: function(text){
-                $('#slug').vall(text);
-            }
-        });
+<script scr="{{ asset('vendor/ckeditor/ckeditor.js') }}"></script>   
+<script type="text/javascript">
+    $(document).ready( function() {
+	    $("#name, #slug").stringToSlug({
+	        callback: function(text){
+	            $('#slug').val(text);
+	        }
+	    });
+        CKEDITOR.config.height  =   400;
+        CKEDITOR.config.width   =   'auto';
+        CKEDITOR.replace('body');
     });
+
+    
 </script>
 @endsection

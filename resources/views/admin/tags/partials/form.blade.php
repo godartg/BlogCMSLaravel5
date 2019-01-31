@@ -13,9 +13,9 @@
 <script scr="{{ asset('vendor/stringToSlug/jquery.stringToSlug.min.js') }}"></script>
 <script>
     $(document).ready(function(){
-        $("#name, #slug").stringToSlut({
+        $("#name, #slug").stringToSlug({
             callback: function(text){
-                $('#slug').vall(text);
+                $('#slug').val(text);
             }
         });
     });

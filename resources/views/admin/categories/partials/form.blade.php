@@ -15,11 +15,11 @@
 </div>
 @section('scripts')
 <script scr="{{ asset('vendor/stringToSlug/jquery.stringToSlug.min.js') }}"></script>
-<script>
+<script type="text/javascript">
     $(document).ready(function(){
-        $("#name, #slug").stringToSlut({
+        $("#name, #slug").stringToSlug({
             callback: function(text){
-                $('#slug').vall(text);
+                $('#slug').val(text);
             }
         });
     });
