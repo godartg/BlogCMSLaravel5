@@ -45,7 +45,11 @@ class TagController extends Controller
     {
         //validar
 
-        $tag= Tag::create($request ->all());
+        //$tag= Tag::create($request ->input('name'), );
+        $tag = New Tag;
+        $tag->name = $request ->input('name');
+        $tag->slug = str_slug($request ->input('name'));
+        $tag->save();
         return redirect()->route('tags.edit', $tag->id)
             ->with('info', 'Etiqueta creada con exito');
     }

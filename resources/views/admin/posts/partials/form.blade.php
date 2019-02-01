@@ -1,21 +1,3 @@
-@section('scripts')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/speakingurl/14.0.1/speakingurl.min.js"></script>
-<script scr="{{ asset('js/jquery.stringToSlug.min.js') }}"></script>
-<script scr="{{ asset('js/jquery.stringToSlug.js') }}"></script>
-<script scr="{{ asset('vendor/stringToSlug/jquery.stringToSlug.js') }}"></script>
-<script scr="{{ asset('vendor/ckeditor/ckeditor.js') }}"></script>
-<script>
-    $(document).ready( function() {
-		$("#name").stringToSlug({
-			callback: function(text){ console.log(text); }
-		});
-	});
-    CKEDITOR.config.height  =   400;
-    CKEDITOR.config.width   =   'auto';
-    CKEDITOR.replace('body');
-    
-</script>
-@endsection
 {{ Form::hidden('user_id', auth()->user()->id) }}
 <div class="form-group">
     {{ Form::label('category_id', 'Categorias')}}
@@ -61,6 +43,20 @@
     {{ Form::label('body', 'Contenido')}}
     {{ Form::textarea('body', null, ['class' => 'form-control', 'id' => 'body']) }}
 </div>
+
+@section('scripts')
+<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+<script>
+window.onload = function(){
+        setTimeout(function(){
+            //CKEDITOR
+            CKEDITOR.replace('body');
+            CKEDITOR.config.height = 100;
+            //END CKEDITOR
+        },0);
+    }
+</script>
+@endsection
 <div class="form-group">
     {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary']) }}
 </div>
