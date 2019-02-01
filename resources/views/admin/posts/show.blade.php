@@ -10,7 +10,7 @@
                 <div class="panel-body">
                     <p><strong>Nombre</strong>      {{ $post->name }}</p>
                     <p><strong>Slug</strong>        {{ $post->slug }}</p>
-                    <p><strong>Contenido</strong>   {{ $post->body }}</p>
+                    <p><strong>Descripción</strong>   {{ $post->body }}</p>
                 </div>
             </div>
         </div>

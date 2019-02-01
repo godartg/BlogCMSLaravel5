@@ -1,3 +1,21 @@
+@section('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/speakingurl/14.0.1/speakingurl.min.js"></script>
+<script scr="{{ asset('js/jquery.stringToSlug.min.js') }}"></script>
+<script scr="{{ asset('js/jquery.stringToSlug.js') }}"></script>
+<script scr="{{ asset('vendor/stringToSlug/jquery.stringToSlug.js') }}"></script>
+<script scr="{{ asset('vendor/ckeditor/ckeditor.js') }}"></script>
+<script>
+    $(document).ready( function() {
+		$("#name").stringToSlug({
+			callback: function(text){ console.log(text); }
+		});
+	});
+    CKEDITOR.config.height  =   400;
+    CKEDITOR.config.width   =   'auto';
+    CKEDITOR.replace('body');
+    
+</script>
+@endsection
 {{ Form::hidden('user_id', auth()->user()->id) }}
 <div class="form-group">
     {{ Form::label('category_id', 'Categorias')}}
@@ -17,13 +35,13 @@
     {{ Form::file('file'), ['id' => 'file']}}
 </div>
 <div class="form-group">
-    {{ Form::label('status', 'Estado: ')}}
-    <label for="">
-    {{ Form::radio('status', 'PUBLISHED')}}Publicado
-    </label>
-    <label for="">
-    {{ Form::radio('status', 'DRAFT', true)}}Borrador
-    </label>
+    {{ Form::label('slug', 'Estado') }}
+	<label>
+		{{ Form::radio('status', 'PUBLISHED') }} Publicado
+	</label>
+	<label>
+		{{ Form::radio('status', 'DRAFT') }} Borrador
+	</label>
 </div>
 <div class="form-group">
     {{Form::label('tags', 'Etiquetas')}}
@@ -46,21 +64,3 @@
 <div class="form-group">
     {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary']) }}
 </div>
-@section('scripts')
-<script scr="{{ asset('vendor/stringToSlug/jquery.stringToSlug.min.js') }}"></script>
-<script scr="{{ asset('vendor/ckeditor/ckeditor.js') }}"></script>   
-<script type="text/javascript">
-    $(document).ready( function() {
-	    $("#name, #slug").stringToSlug({
-	        callback: function(text){
-	            $('#slug').val(text);
-	        }
-	    });
-        CKEDITOR.config.height  =   400;
-        CKEDITOR.config.width   =   'auto';
-        CKEDITOR.replace('body');
-    });
-
-    
-</script>
-@endsection
