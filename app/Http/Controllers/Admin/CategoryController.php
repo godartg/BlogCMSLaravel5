@@ -44,8 +44,11 @@ class CategoryController extends Controller
     public function store(CategoryStoreRequest $request)
     {
         //validar
-
-        $category= Category::create($request ->all());
+        $category = New Category;
+        $category->name = $request ->input('name');
+        $category->slug = str_slug($request ->input('name'));
+        $category->body = $request ->input('body');
+        $category->save();
         return redirect()->route('categories.edit', $category->id)
             ->with('info', 'Categoria creada con exito');
     }
@@ -86,7 +89,10 @@ class CategoryController extends Controller
         //validar
 
         $category = Category::find($id);
-        $category->fill($request->all())->save();
+        $category->name = $request ->input('name');
+        $category->slug = str_slug($request ->input('name'));
+        $category->body = $request ->input('body');
+        $category->save();
         return redirect()->route('categories.edit', $category->id)
             ->with('info', 'Categoria actualizada con exito');
     }
