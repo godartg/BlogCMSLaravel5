@@ -11,19 +11,41 @@
 |
 */
 
-Route::get('/', function () {
-    return redirect()->route('blog');
-});
-
 Auth::routes();
 
-//web
-Route::get('blog',              'Web\PageController@blog')->name('blog');
-Route::get('entrada/{slug}',    'Web\PageController@post')->name('post');
-Route::get('categoria/{slug}',  'Web\PageController@category')->name('category');
-Route::get('etiqueta/{slug}',   'Web\PageController@tag')->name('tag');
+Route::get('/', 'HomeController@index');
+Route::get('home', 'HomeController@index');
+//rutas
 
-//admin
-Route::resource('tags',         'Admin\TagController');
-Route::resource('categories',   'Admin\CategoryController');
-Route::resource('posts',        'Admin\PostController');
+Route::get('form_nuevo_usuario', 'UsuariosController@form_nuevo_usuario');
+Route::post('agregar_nuevo_usuario', 'UsuariosController@agregar_nuevo_usuario');
+Route::get('listado_usuarios/{page?}', 'UsuariosController@listado_usuarios');
+Route::get('form_editar_usuario/{id}', 'UsuariosController@form_editar_usuario');
+Route::post('editar_usuario', 'UsuariosController@editar_usuario');
+Route::post('subir_imagen_usuario', 'UsuariosController@subir_imagen_usuario');
+Route::post('cambiar_password', 'UsuariosController@cambiar_password');
+//leccion 9
+Route::get('form_cargar_datos_usuarios', 'UsuariosController@form_cargar_datos_usuarios');
+Route::post('cargar_datos_usuarios', 'UsuariosController@cargar_datos_usuarios');
+//leccion 10
+Route::get('form_educacion_usuario/{id}', 'EducacionController@form_educacion_usuario');
+Route::post('agregar_educacion_usuario', 'EducacionController@agregar_educacion');
+Route::get('borrar_educacion/{id}', 'EducacionController@borrar_educacion');
+//leccion 11
+Route::get('form_publicaciones_usuario/{id}', 'PublicacionesController@form_publicaciones_usuario');
+Route::post('agregar_publicacion_usuario', 'PublicacionesController@agregar_publicacion');
+Route::get('borrar_publicacion/{id}', 'PublicacionesController@borrar_publicacion');
+Route::get('listado_publicaciones/{id?}', 'PublicacionesController@listado_publicaciones');
+Route::get('descargar_publicacion/{id}', 'PublicacionesController@descargar_publicacion');
+//leccion 11 repetida
+Route::get('form_proyectos_usuario/{id}', 'ProyectosController@form_proyectos_usuario');
+Route::post('agregar_proyectos_usuario', 'ProyectosController@agregar_proyectos_usuario');
+Route::get('borrar_proyecto/{id}', 'ProyectosController@borrar_proyecto');
+//leccion 12 
+Route::get('buscar_usuarios/{pais}/{dato?}', 'UsuariosController@buscar_usuarios');
+
+//leccion 13
+
+Route::get('form_enviar_correo', 'CorreoController@crear');
+Route::post('enviar_correo', 'CorreoController@enviar');
+Route::post('cargar_archivo_correo', 'CorreoController@store');
