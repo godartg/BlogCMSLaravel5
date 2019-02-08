@@ -291,8 +291,8 @@
         <div class="form-group col-xs-12" >
 
 
-          <?php if($usuario->imagenurl==""){ $usuario->imagenurl="imagenes/avatar.jpg"; }  ?>
-          <img src="<?=  $usuario->imagenurl;  ?>"  alt="User Image"  style="width:160px;height:160px;" id="fotografia_usuario" >
+          <?php if($usuario->imagen_url==""){ $usuario->imagen_url="imagenes/avatar.jpg"; }  ?>
+          <img src="<?=  $usuario->imagen_url;  ?>"  alt="User Image"  style="width:160px;height:160px;" id="fotografia_usuario" >
                 <!-- User image -->
           
        </div>

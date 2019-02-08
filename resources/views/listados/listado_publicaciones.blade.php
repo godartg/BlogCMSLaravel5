@@ -6,7 +6,7 @@ if( count($publicaciones) >0){
 ?>
 
 <div class="box box-primary">
-	<div class="box-header"><i class="fa fa-user text-primary"></i>  <?= $archivo->user->nombres." ".$archivo->user->apellidos ;  ?> <span class="text-light-blue tools pull-right" >-<?=  $archivo->created_at;  ?></span> </div>
+	<div class="box-header"><i class="fa fa-user text-primary"></i>  <?= $archivo->user->nombres ;  ?> <span class="text-light-blue tools pull-right" >-<?=  $archivo->created_at;  ?></span> </div>
 	<div class="box-body"> 
                   <i class="fa fa-circle-o text-yellow"></i> <span class="text-light-blue" >-<?=  $archivo->titulo;  ?></span>
                    <br/> <span><b>autores: </b>-<?=  $archivo->autores;  ?></span>    <span class="tools pull-right" ><a href="javascript:void(0);" onclick="borrarpublicacion(<?= $archivo->id;;  ?> );"  ><i class="fa fa-trash-o"></i></a></span> 

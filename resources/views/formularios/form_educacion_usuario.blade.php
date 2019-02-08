@@ -63,8 +63,8 @@
   	    <div class="box box-primary">
                 <div class="box-body box-profile">
                 	<?php if($usuario->imagenurl==""){ $usuario->imagenurl="imagenes/avatar.jpg"; }  ?>           
-                  <img class="profile-user-img img-responsive img-circle" src="<?=  $usuario->imagenurl;  ?>" alt="User profile picture">
-                  <h3 class="profile-username text-center"><?= $usuario->nombres." ".$usuario->apellidos; ?></h3>
+                  <img class="profile-user-img img-responsive img-circle" src="<?=  $usuario->imagen_url;  ?>" alt="User profile picture">
+                  <h3 class="profile-username text-center"><?= $usuario->nombres; ?></h3>
                   <p class="text-muted text-center"><?= $usuario->ocupacion; ?></p>
                   
                   <div id="notificacion_resul_edu"></div>

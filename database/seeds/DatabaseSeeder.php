@@ -12,10 +12,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        
-
         $this->call(UserTableSeeder::class);
-
-        
+        $this->call(seeder_table_pais::class);
     }
 }
