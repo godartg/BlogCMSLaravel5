@@ -27,3 +27,11 @@ Route::get('etiqueta/{slug}',   'Web\PageController@tag')->name('tag');
 Route::resource('tags',         'Admin\TagController');
 Route::resource('categories',   'Admin\CategoryController');
 Route::resource('posts',        'Admin\PostController');
+
+//mail
+
+Route::post('send', 'SendEmailController@direct');
+//Route::get('email', 'SendEmailController@email');
+
+Route::get('correo/home', 'SendEmailController@index')->name('email');
+Route::post('correo/envio', 'SendEmailController@send');

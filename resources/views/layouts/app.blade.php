@@ -32,7 +32,9 @@
                     <ul class="navbar-nav mr-auto">
                         <li><a href="{{ route('blog') }}">Blog</a></li>
                     </ul>
-
+                    <ul class="navbar-nav mr-auto">
+                        <li><a href="{{ route('email') }}">correo</a></li>
+                    </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
