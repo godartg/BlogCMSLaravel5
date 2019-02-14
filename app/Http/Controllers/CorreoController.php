@@ -56,7 +56,7 @@ class CorreoController extends Controller
    
     $data = array('contenido' => $contenido);
     $r= Mail::send('correo.plantilla_correo', $data, function ($message) use ($asunto,$destinatario,  $containfile,$pathToFile) {
-        $message->from('correo@gmail.com', 'Empresa noveltie');
+        $message->from('sl.vilcapuma.edwin@gmail.com', 'Empresa noveltie');
         $message->to($destinatario)->subject($asunto);
        if($containfile){
         $message->attach($pathToFile);
