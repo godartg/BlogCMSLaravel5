@@ -8,8 +8,9 @@
 </head>
 <body>
    <h3 style="color:#00c85f; background: rgba(0,0,0,0.1)">This is custom header</h3>
-   Wellcome {{$name}}
+   Wellcome {{$data["name"]}}
    Mensaje:
+   {{$data["message"]}}
    <h3 style="color:#00c85f; background: rgba(0,0,0,0.1)">This is custom Footer</h3>
 </body>
 </html>

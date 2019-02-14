@@ -30,7 +30,8 @@ class SendMail extends Mailable
     public function build(request $request)
     {
         //$user = user::find(1);
-        return $this->view('correo.sendmail', ['name'=>$request->name])->to( $request->email);
+        $data=['name'=>$request->name, 'message'=>$request->message];
+        return $this->view('correo.sendmail')->with(compact('data'))->to( $request->email);
         //return $this->view('correo.sendmail', ['name'=>$request->name, 'message'=>$request->message])->to( $request->email);
         //return $this->view('correo.sendmail');
     }
